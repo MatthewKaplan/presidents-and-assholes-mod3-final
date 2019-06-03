@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { fetchAllPresidents } from "../api/apiCalls";
 import "./App.scss";
 
 class App extends Component {
@@ -6,7 +7,10 @@ class App extends Component {
     this.fetchPresidentsData();
   }
 
-  fetchPresidentsData = () => {};
+  fetchPresidentsData = () => {
+    fetchAllPresidents()
+    .then(response => console.log(response))
+  };
 
   render() {
     return (
