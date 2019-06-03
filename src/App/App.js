@@ -3,6 +3,7 @@ import { fetchAllPresidents } from "../api/apiCalls";
 import "./App.scss";
 import { connect } from "react-redux";
 import { allPresidents } from "../Actions/index";
+import CardContainer from "../CardContainer/CardContainer";
 
 class App extends Component {
   componentDidMount() {
@@ -17,6 +18,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Presidents and Assholes</h1>
+        <CardContainer />
       </div>
     );
   }

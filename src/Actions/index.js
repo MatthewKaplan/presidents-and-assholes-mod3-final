@@ -6,9 +6,9 @@ export const allPresidents = presidents => ({
 export const isLoading = loading => ({
   type: "IS_LOADING",
   loading
-})
+});
 
 export const hasErrored = error => ({
   type: "HAS_ERRORED",
   error
-})
+});
