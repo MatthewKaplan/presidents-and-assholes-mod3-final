@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { fetchAllPresidents } from "../api/apiCalls";
 import "./App.scss";
+import { connect } from "react-redux";
+import { allPresidents } from "../Actions/index";
 
 class App extends Component {
   componentDidMount() {
@@ -8,8 +10,7 @@ class App extends Component {
   }
 
   fetchPresidentsData = () => {
-    fetchAllPresidents()
-    .then(response => console.log(response))
+    fetchAllPresidents().then(results => this.props.allPresidents(results));
   };
 
   render() {
@@ -21,4 +22,15 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapStateToProps = state => ({
+	presidents: state.presidents
+});
+
+export const mapDispatchToProps = dispatch => ({
+	allPresidents: presidents => dispatch(allPresidents(presidents))
+});
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(App);
