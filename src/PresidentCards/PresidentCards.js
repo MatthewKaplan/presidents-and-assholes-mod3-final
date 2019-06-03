@@ -4,7 +4,7 @@ import './PresidentCards.scss';
 class PresidentCards extends Component {
   render() {
     return (
-      <div className="card-container">
+      <div className="president-cards">
         <h1>PRESIDENT CARDS</h1>
       </div>
     )
