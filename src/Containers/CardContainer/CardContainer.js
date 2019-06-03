@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./CardContainer.scss";
 import { connect } from "react-redux";
-import PresidentCards from "../PresidentCards/PresidentCards";
+import PresidentCards from "../../Components/PresidentCards/PresidentCards";
 import Error from "../Error/Error";
-import Loading from "../Loading/Loading";
+import Loading from "../../Components/Loading/Loading";
 const shortid = require('shortid');
 
 class CardContainer extends Component {

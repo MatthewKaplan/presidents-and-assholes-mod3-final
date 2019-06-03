@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { fetchAllPresidents } from "../api/apiCalls";
+import { fetchAllPresidents } from "../../api/apiCalls";
 import "./App.scss";
 import { connect } from "react-redux";
-import { allPresidents, hasErrored, isLoading } from "../Actions/index";
+import { allPresidents, hasErrored, isLoading } from "../../Actions/index";
 import CardContainer from "../CardContainer/CardContainer";
 
 class App extends Component {
@@ -11,15 +11,16 @@ class App extends Component {
   }
 
   fetchPresidentsData = () => {
-    this.props.isLoading(true)
+    this.props.isLoading(true);
     fetchAllPresidents()
-    .then(results => this.props.allPresidents(results) && this.props.isLoading(false))
-    .catch(error => this.props.hasErrored(error))
+      .then(
+        results =>
+          this.props.allPresidents(results) && this.props.isLoading(false)
+      )
+      .catch(error => this.props.hasErrored(error));
   };
 
   render() {
-    const {loading, error, presidents} = this.props;
-    console.log(presidents)
     return (
       <div className="App">
         <h1>Presidents and Assholes</h1>
@@ -29,12 +30,6 @@ class App extends Component {
   }
 }
 
-export const mapStateToProps = state => ({
-  presidents: state.presidents,
-  error: state.error,
-  loading: state.loading
-});
-
 export const mapDispatchToProps = dispatch => ({
   allPresidents: presidents => dispatch(allPresidents(presidents)),
   hasErrored: error => dispatch(hasErrored(error)),
@@ -42,6 +37,6 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-	mapStateToProps,
-	mapDispatchToProps
+  null,
+  mapDispatchToProps
 )(App);

@@ -1,9 +1,9 @@
-import React, {Component} from "react"
-import './PresidentCards.scss';
+import React, { Component } from "react";
+import "./PresidentCards.scss";
 
 class PresidentCards extends Component {
   render() {
-    const {presidents} = this.props;
+    const { presidents } = this.props;
     return (
       <div className="president-cards">
         <p>Number: {presidents.number}</p>
@@ -14,7 +14,7 @@ class PresidentCards extends Component {
         <p>Left office: {presidents.left_office}</p>
         <p>Party: {presidents.party}</p>
       </div>
-    )
+    );
   }
 }
 
