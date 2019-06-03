@@ -1,0 +1,16 @@
+.error-message {
+  border: 5px solid red;
+  color: #eee;
+  width: 500px;
+  margin: 200px 0 500px 450px;
+
+  p {
+    font-size: 20px;
+  }
+
+  .errorMessage {
+    color: red;
+    font-size: 20px;
+    font-weight: 800;
+  }
+}
