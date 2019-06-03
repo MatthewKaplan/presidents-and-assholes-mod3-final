@@ -3,16 +3,20 @@ import "./CardContainer.scss";
 import { connect } from "react-redux";
 import PresidentCards from "../PresidentCards/PresidentCards";
 import Error from "../Error/Error";
+import Loading from "../Loading/Loading";
+const shortid = require('shortid');
 
 class CardContainer extends Component {
   renderPresidentCards = () => {
-    const { presidents, error } = this.props;
+    const { presidents, error, loading } = this.props;
 
     if (error) {
       return <Error />;
+    } else if (loading) {
+      return <Loading />
     } else {
       return presidents.map(president => (
-        <PresidentCards key={president.id} presidents={president} />
+        <PresidentCards key={shortid.generate()} presidents={president} />
       ));
     }
   };
@@ -24,7 +28,8 @@ class CardContainer extends Component {
 
 export const mapStateToProps = state => ({
   presidents: state.presidents,
-  error: state.error
+  error: state.error,
+  loading: state.loading
 });
 
 export default connect(
