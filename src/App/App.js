@@ -1,12 +1,20 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.scss";
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+class App extends Component {
+  componentDidMount() {
+    this.fetchPresidentsData();
+  }
+
+  fetchPresidentsData = () => {};
+
+  render() {
+    return (
+      <div className="App">
+        <h1>Presidents and Assholes</h1>
+      </div>
+    );
+  }
 }
 
 export default App;
