@@ -18,8 +18,8 @@ class App extends Component {
   };
 
   render() {
-    const {loading, error} = this.props;
-    console.log(error)
+    const {loading, error, presidents} = this.props;
+    console.log(presidents)
     return (
       <div className="App">
         <h1>Presidents and Assholes</h1>
