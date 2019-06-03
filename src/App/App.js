@@ -17,7 +17,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.props.error)
     return (
       <div className="App">
         <h1>Presidents and Assholes</h1>
